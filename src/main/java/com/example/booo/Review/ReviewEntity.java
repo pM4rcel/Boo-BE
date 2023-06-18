@@ -5,6 +5,7 @@ import com.example.booo.ReviewComment.ReviewCommentEntity;
 import com.example.booo.User.UserEntity;
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Collection;
 
@@ -12,7 +13,7 @@ import java.util.Collection;
 @Table(name = "review", schema = "public", catalog = "BooDatabase")
 @NamedQuery(name = "reviews.findById", query = "select a from ReviewEntity a where a.id = ?1 ")
 @NamedQuery(name = "reviews.findAll", query = "select a from ReviewEntity a")
-public class ReviewEntity {
+public class ReviewEntity implements Serializable{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
