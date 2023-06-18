@@ -14,6 +14,6 @@ public interface Repository<T extends Serializable, ID> {
         DataBase.getInstance().persist(entity);
         DataBase.getInstance().getTransaction().commit();
         return entity;
-    };
+    }
     void deleteByID(ID id);
 }

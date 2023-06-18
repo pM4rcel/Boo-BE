@@ -5,8 +5,7 @@ import com.example.booo.Repository;
 
 import java.util.List;
 
-public class AuthorRepository implements Repository<AuthorEntity, Long> {
-
+public abstract class AuthorRepository implements Repository<AuthorEntity, Long> {
     @Override
     public AuthorEntity findByID(Long aLong) {
         return DataBase.getInstance().find(AuthorEntity.class, aLong);

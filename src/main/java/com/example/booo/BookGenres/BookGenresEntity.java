@@ -4,6 +4,8 @@ import com.example.booo.Book.BookEntity;
 import com.example.booo.Genre.GenreEntity;
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "book_genres", schema = "public", catalog = "BooDatabase")
 @IdClass(BookGenresEntityPK.class)
@@ -13,7 +15,7 @@ import jakarta.persistence.*;
         @NamedQuery(name = "book_genre.findByBookId",
         query = "select b from BookGenresEntity b where b.bookId = ?1")
 })
-public class BookGenresEntity {
+public class BookGenresEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "book_id", nullable = false)

@@ -3,6 +3,7 @@ package com.example.booo.Comment;
 import com.example.booo.ReviewComment.ReviewCommentEntity;
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Collection;
 
@@ -14,7 +15,7 @@ import java.util.Collection;
         @NamedQuery(name = "comment.findAll",
         query = "select c from CommentEntity c")
 })
-public class CommentEntity {
+public class CommentEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)

@@ -5,26 +5,32 @@ import java.io.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "helloServlet", value = "/")
+@WebServlet(name = "HelloController", value = "/api/hello")
 public class HelloController extends HttpServlet {
-    private String message;
     @Override
     public void init() {
-        message = "Hello World!";
+
     }
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response.setContentType("text/html");
+        response.setContentType("text/plain");
 
         PrintWriter out = response.getWriter();
-        out.println("<html><body>");
-        out.println("<h1>" + message + "</h1>");
-        out.println("</body></html>");
+        out.println("hello world");
+        out.close();
+//        out.println("<h1>Hello</h1>");
+//        out.println("</body></html>");
+
     }
 
 //    @Override
-
+//    public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+//        PrintWriter out = response.getWriter();
+//        out.println("Resource Created");
+//        response.setStatus(200);
+//        out.close();
+//    }
 
     @Override
     public void destroy() {

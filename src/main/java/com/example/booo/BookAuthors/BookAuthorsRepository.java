@@ -7,7 +7,6 @@ import java.util.List;
 public class BookAuthorsRepository implements Repository<BookAuthorsEntity, Long> {
 
     @Override
-    @Deprecated
     public BookAuthorsEntity findByID(Long aLong) {
         return null;
     }

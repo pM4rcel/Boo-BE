@@ -3,6 +3,7 @@ package com.example.booo.Group;
 import com.example.booo.GroupMembers.GroupMembersEntity;
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.Collection;
 
@@ -10,7 +11,7 @@ import java.util.Collection;
 @Table(name = "group_", schema = "public", catalog = "BooDatabase")
 @NamedQuery(name = "groups.findById", query = "select a from GroupEntity a where a.id = ?1 ")
 @NamedQuery(name = "groups.findAll", query = "select a from GroupEntity a")
-public class GroupEntity {
+public class GroupEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id", nullable = false)
