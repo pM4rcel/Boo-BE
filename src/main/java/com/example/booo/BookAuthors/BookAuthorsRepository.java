@@ -1,23 +1,19 @@
 package com.example.booo.BookAuthors;
 
+import com.example.booo.DataBase.DataBase;
 import com.example.booo.Repository;
 
 import java.util.List;
 
-public class BookAuthorsRepository implements Repository<BookAuthorsEntity, Long> {
-
-    @Override
-    public BookAuthorsEntity findByID(Long aLong) {
-        return null;
+public abstract class BookAuthorsRepository implements Repository<BookAuthorsEntity, Long> {
+    public List<BookAuthorsEntity> findByAuthorId(Long aLong){
+        return DataBase.getInstance().createNamedQuery("book_authors.findByAuthorID", BookAuthorsEntity.class)
+                .setParameter(1, aLong)
+                .getResultList();
     }
-
-    @Override
-    public List<BookAuthorsEntity> findAll() {
-        return null;
-    }
-
-    @Override
-    public void deleteByID(Long aLong) {
-
+    public List<BookAuthorsEntity> findByBookId(Long aLong){
+        return DataBase.getInstance().createNamedQuery("book_authors.findByBookId", BookAuthorsEntity.class)
+                .setParameter(1, aLong)
+                .getResultList();
     }
 }

@@ -3,7 +3,7 @@ package com.example.booo.BookStatus;
 import com.example.booo.DataBase.DataBase;
 import com.example.booo.Repository;
 
-import javax.xml.crypto.Data;
+
 import java.util.List;
 
 public abstract class BookStatusRepository implements Repository<BookStatusEntity, Long> {
