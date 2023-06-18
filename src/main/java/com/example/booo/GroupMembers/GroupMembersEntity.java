@@ -4,13 +4,15 @@ import com.example.booo.Group.GroupEntity;
 import com.example.booo.User.UserEntity;
 import jakarta.persistence.*;
 
+import java.io.Serializable;
+
 @Entity
 @Table(name = "group_members", schema = "public", catalog = "BooDatabase")
 @IdClass(GroupMembersEntityPK.class)
 @NamedQuery(name = "groupMembers.findByUserId", query = "select a from GroupMembersEntity a where a.userId = ?1 ")
 @NamedQuery(name = "groupMembers.findByGroupId", query = "select a from GroupMembersEntity a where a.groupId = ?1 ")
 @NamedQuery(name = "groupMembers.findAll", query = "select a from GroupMembersEntity  a")
-public class GroupMembersEntity {
+public class GroupMembersEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "user_id", nullable = false)

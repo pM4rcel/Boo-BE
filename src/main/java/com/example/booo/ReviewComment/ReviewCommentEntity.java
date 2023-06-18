@@ -9,7 +9,7 @@ import jakarta.persistence.*;
 @Table(name = "review_comment", schema = "public", catalog = "BooDatabase")
 @IdClass(ReviewCommentEntityPK.class)
 @NamedQuery(name = "reviewComments.findByUserId", query = "select a from ReviewCommentEntity a where a.userId = ?1 ")
-@NamedQuery(name = "reviewComments.findByReviwId", query = "select a from ReviewCommentEntity a where a.reviewId = ?1 ")
+@NamedQuery(name = "reviewComments.findByReviewId", query = "select a from ReviewCommentEntity a where a.reviewId = ?1 ")
 @NamedQuery(name = "reviewComments.findAll", query = "select a from ReviewCommentEntity a")
 public class ReviewCommentEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
