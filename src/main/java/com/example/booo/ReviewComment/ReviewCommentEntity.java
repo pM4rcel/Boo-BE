@@ -13,6 +13,7 @@ import java.io.Serializable;
 @NamedQuery(name = "reviewComments.findByUserId", query = "select a from ReviewCommentEntity a where a.userId = ?1 ")
 @NamedQuery(name = "reviewComments.findByReviewId", query = "select a from ReviewCommentEntity a where a.reviewId = ?1 ")
 @NamedQuery(name = "reviewComments.findAll", query = "select a from ReviewCommentEntity a")
+@NamedQuery(name = "reviewComments.findByIDs", query = "select a from ReviewCommentEntity a where a.userId =?1 and a.reviewId = ?2 and a.commentId = ?3")
 public class ReviewCommentEntity implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id

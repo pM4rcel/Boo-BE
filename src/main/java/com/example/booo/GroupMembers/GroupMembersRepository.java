@@ -22,4 +22,10 @@ public abstract class GroupMembersRepository implements Repository<GroupMembersE
         return DataBase.getInstance().createNamedQuery("groupMembers.findAll", GroupMembersEntity.class)
                 .getResultList();
     }
+    public void deleteByUserId(GroupMembersEntityPK g){
+        GroupMembersEntity g1 = DataBase.getInstance().find(GroupMembersEntity.class, g);
+        DataBase.getInstance().getTransaction().begin();
+        DataBase.getInstance().remove(g1);
+        DataBase.getInstance().getTransaction().commit();
+    }
 }

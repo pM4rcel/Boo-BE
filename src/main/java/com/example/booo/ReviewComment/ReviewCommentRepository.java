@@ -23,11 +23,16 @@ public abstract class ReviewCommentRepository implements Repository<ReviewCommen
         var query = DataBase.getInstance().createNamedQuery("reviewComments.findAll", ReviewCommentEntity.class);
         return query.getResultList();
     }
-    @Override
-    public void deleteByID(Long aLong) {
+
+    public ReviewCommentEntity findByIDS(ReviewCommentEntityPK r) {
+        return DataBase.getInstance().find(ReviewCommentEntity.class, r);
+    }
+
+    public void deleteByIdS(ReviewCommentEntityPK r) {
         DataBase.getInstance().getTransaction().begin();
-        ReviewCommentEntity r = findByID(aLong);
-        DataBase.getInstance().remove(r);
+        ReviewCommentEntity r1 = findByIDS(r);
+        DataBase.getInstance().remove(r1);
         DataBase.getInstance().getTransaction().commit();
+
     }
 }

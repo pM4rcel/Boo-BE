@@ -3,8 +3,6 @@ package com.example.booo.BookAuthors;
 import com.example.booo.Author.AuthorEntity;
 import com.example.booo.Book.BookEntity;
 import jakarta.persistence.*;
-import jdk.jfr.Name;
-
 import java.io.Serializable;
 
 @Entity
