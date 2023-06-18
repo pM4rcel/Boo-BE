@@ -4,8 +4,7 @@ import com.example.booo.DataBase.DataBase;
 import com.example.booo.Repository;
 
 import java.util.List;
-
-abstract class UserRepository implements Repository<UserEntity, Long> {
+class UserRepository implements Repository<UserEntity, Long> {
     @Override
     public UserEntity findByID(Long aLong) {
         return DataBase.getInstance().find(UserEntity.class, aLong);

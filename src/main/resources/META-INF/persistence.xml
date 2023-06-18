@@ -34,6 +34,10 @@
             <property name="eclipselink.jdbc.driver" value="org.postgresql.Driver"/>
             <property name="eclipselink.jdbc.user" value="postgres"/>
             <property name="eclipselink.jdbc.password" value="STUD3NT"/>
+            <property name="jakarta.persistence.jdbc.user" value="postgres"/>
+            <property name="jakarta.persistence.jdbc.password" value="STUD3NT"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/BooDatabase"/>
+            <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>
         </properties>
     </persistence-unit>
 </persistence>

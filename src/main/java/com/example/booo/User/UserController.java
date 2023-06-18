@@ -1,15 +1,18 @@
 package com.example.booo.User;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
+import java.util.List;
 
 @WebServlet(urlPatterns = {"/users", "/users/*"})
 public class UserController extends HttpServlet {
+    private final UserService userService = new UserService();
+
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/plain");
