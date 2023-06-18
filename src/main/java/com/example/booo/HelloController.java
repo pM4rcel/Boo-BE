@@ -6,7 +6,7 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 @WebServlet(name = "helloServlet", value = "/")
-public class HelloServlet extends HttpServlet {
+public class HelloController extends HttpServlet {
     private String message;
     @Override
     public void init() {
@@ -22,6 +22,9 @@ public class HelloServlet extends HttpServlet {
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
     }
+
+//    @Override
+
 
     @Override
     public void destroy() {
